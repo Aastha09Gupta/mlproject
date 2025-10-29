@@ -22,3 +22,7 @@ setup(
     packages=find_packages(),
     install_requires=get_requirements('requirments.txt'), 
 )
+
+
+
+## using setup.py we are able to make our ml application as a package 
