@@ -1,9 +1,8 @@
 import os
 import sys
 from dataclasses import dataclass
-os.environ['CATBOOST_LOG_LEVEL'] = 'error' 
 
-from catboost import CatBoostRegressor
+
 from sklearn.ensemble import(
     AdaBoostRegressor,
     GradientBoostingRegressor,
@@ -44,7 +43,6 @@ class ModelTrainer:
                 "Linear Regression":LinearRegression(),
                 "K-Neighbors Classifier": KNeighborsRegressor(),
                 "XGBRegressor": XGBRegressor(),
-                "CatBoost Regressor":CatBoostRegressor(verbose=0),
                 "AdaBoost Regressor":AdaBoostRegressor()
             }
 
@@ -73,11 +71,6 @@ class ModelTrainer:
                 "XGBRegressor":{
                     'learning_rate':[.1,.01,.05,.001],
                     'n_estimators': [8,16,32,64,128,256]
-                },
-                "CatBoost Regressor":{
-                    'depth': [6,8,10],
-                    'learning_rate': [0.01, 0.05, 0.1],
-                    'iterations': [30, 50, 100]
                 },
                 "AdaBoost Regressor":{
                     'learning_rate':[.1,.01,0.5,.001],
