@@ -20,7 +20,7 @@ setup(
     author='Aastha Gupta',
     author_email='ag3162517@gmail.com',
     packages=find_packages(),
-    install_requires=get_requirements('requirments.txt'), 
+    install_requires=get_requirements('requirements.txt'), 
 )
 
 
